@@ -1,26 +1,26 @@
 Feature: Login
-	
+
   Scenario: Successful login with valid credentials
-    Given User launch firefox browser
+    Given User launches Chrome browser
     When User opens URL "http://admin-demo.nopcommerce.com/login"
     And User enters Email as "admin@yourstore.com"
     And User enters Password as "admin"
-    And Click on Login
-    Then Page Title should "Dashboard / nopCommerce administration"
-    When User clicks log out button
+    And Clicks on Login
+    Then Page title should be "Dashboard / nopCommerce administration"
+    When User clicks the log out button
     Then Page title should be "Your store. Login"
-    And close browser
-	
-  Scenario Outline: Verifying login through valid & invalid login credentials using data driven
-    Given User launch firefox browser
+    And Closes the browser
+
+  Scenario Outline: Verifying login with valid & invalid credentials using data-driven testing
+    Given User launches Chrome browser
     When User opens URL "http://admin-demo.nopcommerce.com/login"
     And User enters Email as "<email>"
     And User enters Password as "<password>"
-    And Click on Login
-    Then Page Title should "Dashboard / nopCommerce administration"
-    When User clicks log out button
+    And Clicks on Login
+    Then Page title should be "Dashboard / nopCommerce administration"
+    When User clicks the log out button
     Then Page title should be "Your store. Login"
-    And close browser
+    And Closes the browser
 
     Examples: 
       | email               | password |
